@@ -1,3 +1,29 @@
+// ReactDOM.render(<h1>Hello, React!</h1>, document.getElementById("root"))
+
+/* 
+Challenge - recreate the above line of code in vanilla JS by creating and
+appending an h1 to our div#root (without using innerHTML).
+
+- Create a new h1 element
+- Give it some textContent
+- Give it a class name of "header"
+- append it as a child of the div#root
+    
+*/
+
+/*
+let h1 = document.createElement('h1');
+h1.textContent = "Hello, React!";
+h1.classList.add('header');
+
+let root = document.getElementById("root");
+root.appendChild(h1);
+*/
+
+ReactDOM.render(<h1 className="header">Hello, React!</h1>, document.getElementById("root"))
+
+
+/*
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,6 +64,7 @@ function Navbar() {
   )
 }
 
+*/
 function MainContent() {
   return <h1>I'm learning React</h1>;
 }
