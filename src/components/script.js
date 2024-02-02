@@ -145,4 +145,16 @@ function getBook(id) {
 
 // Destructuring
 
-const books = getBooks();
+const book = getBook(2);
+
+// const title = book.title;
+// const author = book.author;
+
+const { title, author, genres, hasMovieAdaptation, pages, publicationDate } =
+  book;
+book;
+
+title;
+author;
+pages;
+hasMovieAdaptation;
