@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring object
 
-const book = getBook(2);
+const book = getBook(1);
 
 // const title = book.title;
 // const author = book.author;
@@ -174,8 +174,25 @@ primaryGenres;
 secondaryGenres;
 otherGenres;
 
-// ... spread operator look exactly like rest operator
+// ... spread operator look exactly like rest operator, however, it usually placed at the start of an array or object array.
 
 const newGenres = [...genres, "epic fantasy"];
 
 newGenres;
+
+const updatedBook = {
+  ...book,
+
+  // add a new property
+
+  moviePublicationDate: "2024",
+
+  // overwriting an existing property
+  pages: 4000
+};
+
+updatedBook;
+
+const summary = `${title} is a ${genres[1]} ${pages}-page long book written by ${author}`;
+
+summary;
