@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-// Destructuring
+// Destructuring object
 
 const book = getBook(2);
 
@@ -158,3 +158,18 @@ title;
 author;
 pages;
 hasMovieAdaptation;
+
+// Destructuring array
+
+genres;
+
+// const primaryGenres = genres[0];
+// const secondaryGenres = genres[1];
+
+const [primaryGenres, secondaryGenres, ...otherGenres] = genres;
+
+primaryGenres;
+secondaryGenres;
+otherGenres;
+
+// ...rest operator can only be placed at the last elements of array, or the only one element.
