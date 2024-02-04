@@ -168,8 +168,14 @@ genres;
 
 const [primaryGenres, secondaryGenres, ...otherGenres] = genres;
 
+// ...rest operator can only be placed at the last elements of array, or the only one element.
+
 primaryGenres;
 secondaryGenres;
 otherGenres;
 
-// ...rest operator can only be placed at the last elements of array, or the only one element.
+// ... spread operator look exactly like rest operator
+
+const newGenres = [...genres, "epic fantasy"];
+
+newGenres;
