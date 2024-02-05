@@ -193,14 +193,53 @@ const updatedBook = {
 
 updatedBook;
 
+const getYear = (str) => str.split("-")[0];
+
+console.log(getYear(publicationDate));
+
 const summary = `${title} is a ${
   genres[1]
-} ${pages}-page long book written by ${author} and published in ${
-  publicationDate.split("-")[0]
-}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie.`;
+} ${pages}-page long book written by ${author} and published in ${getYear(
+  publicationDate
+)}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie.`;
 
 summary;
 
 const pagesRange = pages > 1000 ? "more than 1000" : "less than 1000";
 
 console.log(`This books has ${pagesRange} pages.`);
+
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+console.log(true && "display this");
+console.log(false && "display this");
+
+console.log(hasMovieAdaptation && "This book has movie");
+
+//falsy value: 0 , '', null, undefined
+
+console.log("jonas" && "Some string");
+console.log(0 && "Some string");
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+console.log(book.translations.french);
+
+const frenchTranslation = book.translations.french || "NOT TRANSLATED";
+
+frenchTranslation;
+
+console.log(book.translations.spanish);
+
+console.log(book.reviews.librarything.reviewsCount);
+
+// So the or || can go wrong because of 0 or '' is also count as falsy value:
+const wrongCount = book.reviews.librarything.reviewsCount || "No Data";
+wrongCount;
+
+// but the new ?? can get it right because it include 0 and empty string ''
+const count = book.reviews.librarything.reviewsCount ?? "No Data";
+count;
