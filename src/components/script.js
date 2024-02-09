@@ -144,8 +144,10 @@ function getBook(id) {
 }
 
 // Destructuring object
+/*
 
-const book = getBook(2);
+
+const book = getBook(1);
 
 // const title = book.title;
 // const author = book.author;
@@ -234,12 +236,23 @@ frenchTranslation;
 
 console.log(book.translations.spanish);
 
-console.log(book.reviews.librarything.reviewsCount);
+console.log(book.reviews.librarything?.reviewsCount ?? "No Data");
 
 // So the or || can go wrong because of 0 or '' is also count as falsy value:
-const wrongCount = book.reviews.librarything.reviewsCount || "No Data";
+const wrongCount = book.reviews.librarything?.reviewsCount || "No Data";
 wrongCount;
 
 // but the new ?? can get it right because it include 0 and empty string ''
-const count = book.reviews.librarything.reviewsCount ?? "No Data";
+const count = book.reviews.librarything?.reviewsCount ?? "No Data";
 count;
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(book));
+
+*/
