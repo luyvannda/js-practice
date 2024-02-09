@@ -246,6 +246,11 @@ wrongCount;
 const count = book.reviews.librarything?.reviewsCount ?? "No Data";
 count;
 
+
+*/
+
+const books = getBooks();
+
 function getTotalReviewCount(book) {
   const goodreads = book.reviews?.goodreads?.reviewsCount;
   const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
@@ -253,6 +258,15 @@ function getTotalReviewCount(book) {
   return goodreads + librarything;
 }
 
-console.log(getTotalReviewCount(book));
+const titles = books.map((book) => book.title);
 
-*/
+console.log(titles);
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  publicationDate: book.publicationDate,
+  reviewsCount: getTotalReviewCount(book)
+}));
+
+console.log(essentialData);
