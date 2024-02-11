@@ -282,3 +282,23 @@ const adventureBooks = books
   .map((book) => book.title);
 
 console.log(adventureBooks);
+
+const totalBooksPages = books.reduce((sum, book) => sum + book.pages, 0);
+console.log(totalBooksPages);
+
+// Sort method change the original array which we don't want so we need to copy the array with slice before sort.
+
+const arr = [1, 8, 2, 9, 6, 5];
+const sorted = arr.slice().sort((a, b) => a - b);
+console.log(sorted);
+console.log(arr);
+
+const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+
+const essentialAfterSortedByPages = sortedByPages.map((book) => ({
+  title: book.title,
+  author: book.author,
+  pages: book.pages
+}));
+
+essentialAfterSortedByPages;
