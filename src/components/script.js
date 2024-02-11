@@ -302,3 +302,33 @@ const essentialAfterSortedByPages = sortedByPages.map((book) => ({
 }));
 
 essentialAfterSortedByPages;
+
+// add book object to array
+
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: "J. K. Rowling"
+};
+
+const booksAfterAdd = [...books, newBook];
+console.log(booksAfterAdd);
+
+// remove book object from array
+
+const booksAfterRemove = booksAfterAdd.filter((book) => book.id !== 3);
+
+booksAfterRemove;
+
+// update book object in the array
+
+const booksAfterUpdate = booksAfterRemove.map((book) =>
+  book.id === 1
+    ? {
+        ...book,
+        pages: 1000
+      }
+    : book
+);
+
+booksAfterUpdate;
