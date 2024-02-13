@@ -247,7 +247,7 @@ const count = book.reviews.librarything?.reviewsCount ?? "No Data";
 count;
 
 
-*/
+
 
 const books = getBooks();
 
@@ -332,3 +332,21 @@ const booksAfterUpdate = booksAfterRemove.map((book) =>
 );
 
 booksAfterUpdate;
+*/
+
+// fetch("https://jsonplaceholder.typicode.com/todos")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+
+async function getTodos() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+
+  console.log(data);
+}
+
+const Todos = getTodos();
+
+console.log(Todos);
+
+console.log("Hi, Joe!!!");
