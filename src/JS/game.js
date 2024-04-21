@@ -95,12 +95,6 @@ function Hero(name, level) {
   this.level = level;
 }
 
-// Add greet method to the Hero prototype
-Hero.prototype.greet = function () {
-  return `${this.name} says hello.`;
-};
-
-// Initialize Warrior constructor
 function Warrior(name, level, weapon) {
   // Chain constructor with call
   Hero.call(this, name, level);
@@ -115,8 +109,16 @@ function Healer(name, level, spell) {
   this.spell = spell;
 }
 
+// Link prototypes and add prototype methods
 Object.setPrototypeOf(Warrior.prototype, Hero.prototype);
 Object.setPrototypeOf(Healer.prototype, Hero.prototype);
+
+// Add greet method to the Hero prototype
+Hero.prototype.greet = function () {
+  return `${this.name} says hello.`;
+};
+
+// Initialize Warrior constructor
 
 Warrior.prototype.attack = function () {
   return `${this.name} attacks with the ${this.weapon}.`;
@@ -126,6 +128,7 @@ Healer.prototype.cast = function () {
   return `${this.name} casts ${this.spell}.`;
 };
 
+// Initialize individual character instances
 const hero1 = new Warrior("Joe", 1, "sword");
 const hero2 = new Healer("Kanin", 1, "cure");
 
