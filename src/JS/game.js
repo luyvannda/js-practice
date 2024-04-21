@@ -17,6 +17,8 @@ const playerTwo = {
 };
 */
 
+/* Learned about Prototype 
+
 function Player(name, marker) {
   this.name = name;
   this.marker = marker;
@@ -43,3 +45,45 @@ Player.prototype.sayHello = function () {
 
 player1.sayHello();
 player2.sayHello();
+
+Object.getPrototypeOf(Player.prototype) === Object.prototype;
+console.log(player1.valueOf());
+
+console.log(player1.hasOwnProperty("valueOf"));
+console.log(Object.prototype.hasOwnProperty("valueOf"));
+
+*/
+
+// This is to practice prototypal inheritance
+
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.sayName = function () {
+  console.log(`Hello, I'm ${this.name}!`);
+};
+
+function Player(name, marker) {
+  this.name = name;
+  this.marker = marker;
+}
+
+Player.prototype.getMarker = function () {
+  console.log(`My marker is '${this.marker}'`);
+};
+
+Object.getPrototypeOf(Player.prototype); // returns Object.prototype
+
+// Now make `Player` objects inherit from `Person`
+Object.setPrototypeOf(Player.prototype, Person.prototype);
+
+Object.getPrototypeOf(Player.prototype);
+
+const player1 = new Player("Joe", "X");
+const player2 = new Player("Raksmey", "O");
+
+player1.sayName();
+player2.sayName();
+player1.getMarker();
+player2.getMarker();
