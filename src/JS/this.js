@@ -47,4 +47,15 @@ console.log(car.wheelsCount);
 console.log(car instanceof Vehicle);
 
 // Function invocation. Throws an error.
-const brokenCar = Vehicle("Broken Car", 3);
+// const brokenCar = Vehicle("Broken Car", 3);
+
+// Indirect Invocation: this with call and apply
+const rabbit = { name: "White Rabbit" };
+
+function concatName(string) {
+  console.log(this === rabbit);
+  return string + this.name;
+}
+
+console.log(concatName.call(rabbit, "Hello "));
+console.log(concatName.apply(rabbit, ["Bye "]));
