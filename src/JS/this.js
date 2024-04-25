@@ -10,3 +10,21 @@ const calc = {
 
 calc.increment();
 calc.increment();
+
+// Starting ECMAScript 2015, JavaScript allows to define constructors using class:
+
+class City {
+  constructor(name, traveled) {
+    this.name = name;
+    this.traveled = false;
+  }
+
+  travel() {
+    this.traveled = true;
+  }
+}
+const paris = new City("Paris", false);
+
+paris.travel();
+
+console.log(paris.traveled);
